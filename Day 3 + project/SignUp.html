@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        ::placeholder{
+        color:white;
+        opacity: 1;
+    }
+    body{
+        background-image:url(home.png);
+        
+    }
+    img{
+        text-align: center;
+    }
+    div{
+        background-color: lightgrey;
+        height: 550px;
+        width: 250px;
+        margin: 10px auto;
+        padding: 20px;
+        border-radius: 10%; 
+ 
+    }
+    .iput{
+        margin: 5px auto;
+        padding: 10px;
+        background-color: lightgray;
+         
+        
+    }
+
+    #submitb{
+        background-color: #FF3131;
+        border-radius: 17%;
+        text-align: center;
+        font-weight: bold;
+        border:1px outset #FF3131;
+        height: 28px;
+        width: 65px;
+
+    }
+    .iput{
+        outline: none;
+        box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid black;
+    }
+    .iput:focus{
+        border-top:0;
+        border-left:0;
+        border-right:0;
+        border-bottom: 2px outset skyblue;
+    }
+    #lockk{
+        height:20px;
+        width:20px;
+    }
+    #personn{
+        height: 25px;
+        width: 25px;
+    }
+    #letterr{
+        height: 23px;
+        width: 23px;
+    }
+    </style>
+
+    <title>Sign Up</title>
+</head>
+<body>
+    <form method="post" action="home.html">
+        <div>
+            <table align="center">
+                <tr align="center">
+                    <td><br/>
+                        <br/>
+                        <img id="personn" src="person.png" />
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>
+                        <input type="text" name="name" placeholder="enter your name" class="iput"/>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td><br/>
+                        <br/>
+                    <img id="letterr" src="letter.png">
+
+                    </td>
+                <tr align="center">
+                    <td>
+                        <input type="text" name="mmail" placeholder="enter your mail" class="iput"/>
+                    </td>
+                    
+                </tr>
+                </tr>
+                <tr align="center">
+                    <td><br/>
+                        <br/>
+                    <img id="lockk" src="lock-icon-11.png">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>
+                        <input type="password" name="name" placeholder="enter your password" class="iput"/>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td><br/>
+                        <br/>
+                    <img id="lockk" src="lock-icon-11.png">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>
+                        <input type="password" name="name" placeholder="rewrite your password" class="iput"/>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td><br/>
+                        <input type="submit" name="sign" id="submitb" value="Sign Up">
+                    </td>
+                </tr>
+            
+            </table>
+              
+        </div> 
+    </form>
+</body>
+</html>
