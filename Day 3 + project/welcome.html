@@ -2,110 +2,104 @@
 <html lang="en">
 <head>
    <style>
-    ::placeholder{
-        color:white;
+    ::placeholder {
+        color: #ffffff;
         opacity: 1;
     }
-    body{
-        background-image:url(home.png);
-        
+    body {
+        background-image: url(home.png);
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
     }
-    img{
-        text-align: center;
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
-    div{
-        background-color: lightgrey;
-        height: 340px;
-        width: 200px;
-        margin: 10px auto;
+    .form-wrapper {
+        background-color: #f8f8f8;
+        border-radius: 10px;
         padding: 20px;
-        border-radius: 10%; 
- 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    .iput{
-        margin: 5px auto;
+    .form-wrapper img {
+        display: block;
+        margin: 0 auto;
+        width: 80px;
+        height: 80px;
+    }
+    .form-wrapper h2 {
+        text-align: center;
+        margin-top: 10px;
+        color: #333333;
+    }
+    .input-group {
+        margin-top: 20px;
+    }
+    .input-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .input-group input {
+        width: 100%;
         padding: 10px;
-        background-color: lightgray;
-         
-        
+        border: none;
+        border-bottom: 2px solid #333333;
+        transition: border-color 0.3s ease-in-out;
+        box-sizing: border-box;
     }
-
-    #submitb{
+    .input-group input:focus {
+        border-color: skyblue;
+    }
+    .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
         background-color: #FF3131;
-        border-radius: 17%;
+        border-radius: 17px;
         text-align: center;
         font-weight: bold;
-        border:1px outset #FF3131;
-        height: 28px;
-        width: 65px;
-
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
     }
-    .iput{
-        outline: none;
-        box-sizing: border-box;
-  border: none;
-  border-bottom: 2px solid black;
+    .submit-btn:hover {
+        background-color: #cc0000;
     }
-    .iput:focus{
-        border-top:0;
-        border-left:0;
-        border-right:0;
-        border-bottom: 2px outset skyblue;
+    .signup-link {
+        text-align: center;
+        margin-top: 20px;
     }
-    #lockk{
-        height:20px;
-        width:20px;
+    .signup-link a {
+        color: #333333;
+        text-decoration: none;
     }
-    #personn{
-        height: 25px;
-        width: 25px;
-    }
-    
-    
-   </style>
+    </style>
 </head>
 <body>
-    <form method="post" action="home.html">
-    <div>
-        <table align="center">
-            <tr align="center">
-                <td><br/>
-                    <br/>
-                    <img id="personn" src="person.png" />
-                </td>
-            </tr>
-            <tr align="center">
-                <td>
-                    <input type="text" name="name" placeholder="enter your name" class="iput"/>
-                </td>
-            </tr>
-            <tr align="center">
-                <td><br/>
-                    <br/>
-                <img id="lockk" src="lock-icon-11.png">
-                </td>
-            </tr>
-            <tr align="center">
-                <td>
-                    <input type="password" name="name" placeholder="enter your password" class="iput"/>
-                </td>
-            </tr>
-            <tr align="center">
-                <td><br/>
-                    <input type="submit" name="sign" id="submitb" value="Log In">
-                </td>
-            </tr>
-            <tr align="center">
-                <td><br/>
-                    <br/>
-                    <a href="SignUp.html">sign up</a>
-                </td>
-            </tr>
-        
-        </table>
-          
-    </div> 
-    </form>
-    
+    <div class="container">
+        <div class="form-wrapper">
+            <img src="person.png" alt="Person Icon">
+            <h2>Welcome Back!</h2>
+            <form method="post" action="home.html">
+                <div class="input-group">
+                    <label for="name">Email</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <input type="submit" name="sign" class="submit-btn" value="Log In">
+            </form>
+            <div class="signup-link">
+                Don't have an account? <a href="SignUp.html">Sign up</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

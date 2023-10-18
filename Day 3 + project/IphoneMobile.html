@@ -44,6 +44,8 @@
             background-color: #FF3131;
             text-align: center;
             border-radius: 12%;
+            padding-top: 20px;
+            position: relative;
         }
         #product{
             height:180px;
@@ -56,6 +58,27 @@
             font-weight: bold;
 
         }
+        #addToCartBtn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #E60000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            position: absolute;
+            bottom: 60px;
+            left: 190px;
+        }
+        #addToCartBtn:hover {
+            background-color: #FF3131;
+        }
+        #wa {
+            position: absolute;
+            bottom: 5px; 
+            right: 215px; 
+        }
         
 
     </style>
@@ -63,16 +86,39 @@
 </head>
 <body>
     <ul>
-        <li><img id="icon" src="home1.png"></li></ul>
+        <li><a  href="welcome.html"><img id="icon" src="home1.png"></a></li>
         <li class="liti" id="lil1"><a href="home.html">Products</a></li>
-        <li class="liti" id="lil2"><a href="about.html">About us</a></li>
+        <li class="liti" id="lil2"><a href="cart.html">Cart</a></li>
         <li class="liti" id="lil3"><a href="Contact Info.html">Contact us</a></li>
     </ul>
     <div>
         <img id="product" src="apple1.png">
         <p>Iphone - Apple Mobile<br/>20,000LE</p>
+        <button id="addToCartBtn" onclick="addToCart()">Add to Cart</button>
         <a href="http://wa.me/+20101243535353535353"><img id="wa" src="wp (1).gif"></a>
     </div>
+
+     <script>
+       function addToCart() {
+    const product = {
+        name: 'Iphone - Apple Mobile',
+        price: '20,000LE',
+        image: 'apple1.png'  // Update the image source for iPhone
+    };
+
+    // Check if cart is already in local storage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Add the product to the cart
+    cart.push(product);
+
+    // Store updated cart in local storage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert('Product added to cart!');
+}
+
+    </script>
     
 </body>
 </html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Add your styles for the cart page here */
+        body {
+            background-color: lightgray;
+            padding: 20px;
+        }
+        .cart-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        ul{
+            display: inline-block;
+            margin-top:0;
+            padding-top:0;
+        }
+        li{
+            list-style: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .liti{
+            padding-left: 130px;
+        }
+        #lil1{
+            padding-left: 700px;
+        }
+        a:link, a:visited, a:active{
+            text-decoration: none;
+            color:black;
+            font-family:sans-serif;
+            font-size: large;
+            font-weight: bold;
+        }
+        a:hover{
+            color:#FF3131;
+        }
+        #icon{
+            height: 30px;
+            width: 50px;
+            padding-left: 2px;
+        }
+
+
+
+
+        .product {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .product img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 10px;
+        }
+        .cart-buttons button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cart-buttons button:nth-child(2) {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .cart-buttons button:nth-child(2):hover {
+            background-color: #45a049;
+        }
+        .cart-buttons button:nth-child(1) {
+            background-color: #f44336;
+            color: white;
+        }
+        .cart-buttons button:nth-child(1):hover {
+            background-color: #d32f2f;
+        }
+    </style>
+    <title>Cart</title>
+</head>
+<body>
+    <ul>
+        <li><a  href="welcome.html"><img id="icon" src="home1.png"></a></li>
+        <li class="liti" id="lil1"><a href="home.html">Products</a></li>
+        <li class="liti" id="lil2"><a href="cart.html">Cart</a></li>
+        <li class="liti" id="lil3"><a href="Contact Info.html">Contact us</a></li>
+    </ul>
+
+
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+        <div id="cartItems"></div>
+        <div class="cart-buttons">
+        <button onclick="emptyCart()">Empty Cart</button>
+        <button onclick="purchase()">Buy</button>
+    </div>
+    </div>
+
+    <script>
+   function displayCart() {
+    const cartItems = JSON.parse(localStorage.getItem('cart'));
+    const cartItemsDiv = document.getElementById('cartItems');
+
+    if (cartItems && cartItems.length > 0) {
+        cartItemsDiv.innerHTML = cartItems.map(item => {
+            let imageName;
+            if (item.name === 'Apple Macbook') {
+                imageName = 'applemac.jpg';
+            } else if (item.name === 'Iphone - Apple Mobile') {
+                imageName = 'apple1.png';
+            } else {
+                imageName = ''; // Add image names for other products as needed
+            }
+
+            return `<div class="product">
+                        <img src="${imageName}" alt="Product Image">
+                        <p>${item.name}</p>
+                        <p>Price: ${item.price}</p>
+                    </div>`;
+        }).join('');
+    } else {
+        cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
+    }
+}
+
+
+        function emptyCart() {
+            localStorage.removeItem('cart');
+            displayCart();
+        }
+
+        function purchase() {
+            alert('Successful purchase!');
+            emptyCart();
+        }
+
+        // Display cart items on page load
+        displayCart();
+    </script>
+</body>
+</html>
