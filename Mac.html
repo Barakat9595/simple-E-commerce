@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background: url(home.png);
+        }
+        #icon {
+            height: 30px;
+            width: 50px;
+            padding-left: 2px;
+        }
+        ul {
+            display: inline-block;
+            margin-top: 0;
+            padding-top: 0;
+        }
+        li {
+            list-style: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .liti {
+            padding-left: 130px;
+        }
+        #lil1 {
+            padding-left: 700px;
+        }
+        a:link, a:visited, a:active {
+            text-decoration: none;
+            color: black;
+            font-family: sans-serif;
+            font-size: large;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #FF3131;
+        }
+        div {
+            width: 500px;
+            height: 400px;
+            margin-left: 430px;
+            margin-top: 100px;
+            background-color: #FF3131;
+            text-align: center;
+            border-radius: 12%;
+            padding-top: 20px;
+            position: relative;
+        }
+        #product {
+            height: 150px;
+            width: 190px;
+            display: inline-block;
+            margin-top: 8px;
+        }
+        p {
+            font-family: calibri;
+            font-weight: bold;
+        }
+        #addToCartBtn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #E60000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            position: absolute;
+            bottom: 70px;
+            left: 190px;
+        }
+        #addToCartBtn:hover {
+            background-color: #FF3131;
+        }
+        #wa {
+            position: absolute;
+            bottom: 10px; 
+            right: 215px; 
+        }
+    </style>
+    <title>Apple Devices</title>
+</head>
+<body>
+    <ul>
+        <li><a  href="welcome.html"><img id="icon" src="home1.png"></a></li>
+        <li class="liti" id="lil1"><a href="home.html">Products</a></li>
+        <li class="liti" id="lil2"><a href="cart.html">Cart</a></li>
+        <li class="liti" id="lil3"><a href="Contact Info.html">Contact us</a></li>
+    </ul>
+    <div>
+        <img id="product" src="applemac.jpg">
+        <p>Apple Macbook<br/>Core i7 processor<br/>1TB HDD<br/>16GB RAM<br/>45,000LE</p>
+        <button id="addToCartBtn" onclick="addToCart()">Add to Cart</button>
+        <a href="http://wa.me/+20101243535353535353"><img id="wa" src="wp (1).gif"></a>
+    </div>
+
+    <script>
+        function addToCart() {
+    const product = {
+        name: 'Apple Macbook',
+        processor: 'Core i7',
+        storage: '1TB HDD',
+        ram: '16GB RAM',
+        price: '45,000LE',
+        image: 'applemac.jpg'  // Update the image source for Macbook
+    };
+
+    // Check if cart is already in local storage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Add the product to the cart
+    cart.push(product);
+
+    // Store updated cart in local storage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert('Product added to cart!');
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <style>
+
+        
+.search-bar {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 200px;
+            padding: 8px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            background-color: #FFF;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-button {
+            padding: 5px 10px;
+            margin-left: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            background-color: #FF3131;
+            color: #FFF;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-button:hover {
+            background-color: #E60000;
+        }
+
+
+
+
+
+
+        table {
+            text-align: center;
+            width: 100%;
+        }
+
+        .tablephoto {
+            height: 250px;
+            width: 200px;
+        }
+        
+        body{
+            background-color: lightgray;
+        }
+        #icon{
+            height: 30px;
+            width: 50px;
+            padding-left: 2px;
+        }
+        ul{
+            display: inline-block;
+            margin-top:0;
+            padding-top:0;
+        }
+        li{
+            list-style: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .liti{
+            padding-left: 130px;
+        }
+        #lil1{
+            padding-left: 700px;
+        }
+        a:link, a:visited, a:active{
+            text-decoration: none;
+            color:black;
+            font-family:sans-serif;
+            font-size: large;
+            font-weight: bold;
+        }
+        a:hover{
+            color:#FF3131;
+        }
+        table{
+            text-align: center;
+            padding-top: 80px;
+            width:100%;
+            
+        }
+        .tablephoto{
+            height:250px;
+            width:200px;
+        }
+        th{
+            text-align: center;
+            vertical-align: middle;
+            font-family: Calibri;
+            font-size: large;
+            
+        }
+        th:hover{
+            background-color: #FF3131;
+        }
+        h3{
+            text-align: center;
+            background-color: #FF3131;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            height: 30px;
+            width: 100%;
+            font-family: Calibri;
+        }
+        .cart-link {
+            padding-left: 20px;
+            font-size: large;
+            font-weight: bold;}
+        
+
+    </style>
+
+<script>
+    function search() {
+        var input = document.getElementById('search').value.toLowerCase();
+
+        var links = document.getElementsByTagName('a');
+        for (var i = 0; i < links.length; i++) {
+            var href = links[i].getAttribute('href').toLowerCase();
+            if (href.includes(input)) {
+                window.location.href = links[i].getAttribute('href');
+                return;
+            }
+        }
+
+        alert("No results found.");
+
+        function addToCart(productName) {
+            // Replace this with your actual logic to add the product to cart
+            alert('Added ' + productName + ' to the cart!');}
+    }
+</script>
+</head>
+<body>
+    <body>
+        <ul>
+            <li><a  href="welcome.html"><img id="icon" src="home1.png"></a></li>
+            <li class="liti" id="lil1"><a href>Products</a></li>
+            <li class="liti" id="lil2"><a href="cart.html">Cart</a></li>
+            <li class="liti" id="lil3"><a href="Contact Info.html">Contact us</a></li>
+        </ul>
+    
+        <div class="search-bar">
+            <input type="text" id="search" class="search-input" placeholder="Search...">
+            <button onclick="search()" class="search-button">Go</button>
+        </div>
+    
+        <table cellpadding="50px">
+            <tr>
+                <th><a href="SamsungMobile.html"><img src="samsung1.jpg" class="tablephoto"></a><br/>Samsung mobile</th>
+                <th><a href="IphoneMobile.html"><img src="apple1.png" class="tablephoto"></a><br/>Iphone</th>
+                <th><a href="AppleSmartWatch.html"><img src="apple s6 nike.jpg" class="tablephoto"></a><br/>Apple S6 Nike smartwatch</th>
+                <th><a href="SonyHeadset.html"><img src="sonyhead.jpg" class="tablephoto"></a><br/>Sony Headphone</th>
+            </tr>
+            <tr>
+                <th><a href="HPLaptop.html"><img src="hplaptop.jpg" class="tablephoto"></a><br/>HP Laptop</th>
+                <th><a href="DellLaps.html"><img src="Dell-XPS-5.jpg" class="tablephoto"></a><br/>Dell Laptop</th>
+                <th><a href="LGscreen.html"><img src="LGuhd.avif" class="tablephoto"></a><br/>LG Ultra HD screen</th>
+                <th><a href="SamsungScreen.html"><img src="Samsungcurv.jpg" class="tablephoto"></a><br/>Samsung Curved smart screen</th>
+            </tr>
+            <tr>
+                <th><a href="Galaxy.html"><img src="galaxy.jpg" class="tablephoto"></a><br/>Samsung Galaxy Tablet</th>
+                <th><a href="IPAD.html"><img src="apple ipad.jpg" class="tablephoto"></a><br/>Apple Ipad tablet</th>
+                <th><a href="Mac.html"><img src="applemac.jpg" class="tablephoto"></a><br/>Apple MacBook</th>
+                <th><a href="airpods.html"><img src="airpodsapp.jpg" class="tablephoto"></a><br/>Apple Airpods</th>
+            </tr>
+        </table>
+    
+    <h3>All Rights Reserved To ITI &#169;</h3>
+    
+    
+</body>
+</html>
