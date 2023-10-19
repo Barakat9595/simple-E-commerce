@@ -100,13 +100,22 @@
                 </tr>
                 <tr align="center">
                     <td><br/>
-                        <input type="submit" name="sign" id="submit-btn" value="Sign Up">
+                        <input type="button" id="submit-btn" value="Sign Up">
                     </td>
                 </tr>
             </table>
         </div> 
         
     </form>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const submitButton = document.getElementById('submit-btn');
+
+            submitButton.addEventListener('click', () => {
+                window.location.href = 'home.html';
+            });
+        });
+    </script>
 
     
 </body>
