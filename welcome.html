@@ -94,7 +94,8 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
-                <input type="submit" name="sign" class="submit-btn" value="Log In" onclick="login()">
+                <input type="button" id="loginButton" class="submit-btn" value="Log In">
+
 
             </form>
             <div class="signup-link">
@@ -104,10 +105,14 @@
     </div>
     
     <script>
-        function login() {
-            // Add your login functionality here
-            alert('Login button clicked!');
-        }
+        document.addEventListener('DOMContentLoaded', (event) => {
+    const loginButton = document.getElementById('loginButton');
+
+    loginButton.addEventListener('click', () => {
+        window.location.href = 'home.html';
+    });
+});
+
     </script>
 </body>
 </html>
