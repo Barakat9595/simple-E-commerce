@@ -108,14 +108,16 @@
         
     </form>
     <script>
+        function redirectToHome() {
+            window.location.href = 'home.html';
+        }
+        
         document.addEventListener('DOMContentLoaded', (event) => {
             const submitButton = document.getElementById('submit-btn');
-
-            submitButton.addEventListener('click', () => {
-                window.location.href = 'home.html';
-            });
+            submitButton.addEventListener('click', redirectToHome);
         });
     </script>
+    
 
     
 </body>
