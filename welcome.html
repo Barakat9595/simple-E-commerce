@@ -105,11 +105,19 @@
     </div>
     
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
+     document.addEventListener('DOMContentLoaded', (event) => {
     const loginButton = document.getElementById('loginButton');
 
     loginButton.addEventListener('click', () => {
-        window.location.href = 'home.html';
+        const username = document.getElementById('name').value;
+        const password = document.getElementById('password').value;
+
+        // Check if username and password are correct
+        if (username === 'staticwebuser' && password === '12345') {
+            window.location.href = 'home.html';
+        } else {
+            alert('Invalid username or password. Please try again.');
+        }
     });
 });
 
