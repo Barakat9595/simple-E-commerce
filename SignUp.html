@@ -55,7 +55,7 @@
     <title>Sign Up</title>
 </head>
 <body>
-    <form method="post" action="home.html" id="signupForm">
+    <form method="post" action="home.html">
         <div>
             <table align="center">
                 <tr align="center">
@@ -105,14 +105,14 @@
                 </tr>
             </table>
         </div> 
+        
     </form>
 
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            const signupForm = document.getElementById('signupForm');
+            const submitButton = document.getElementById('submit-btn');
 
-            signupForm.addEventListener('submit', (event) => {
-                event.preventDefault();  // Prevents the default form submission behavior
+            submitButton.addEventListener('click', () => {
                 window.location.href = 'home.html';
             });
         });
