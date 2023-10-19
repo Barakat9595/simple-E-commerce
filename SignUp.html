@@ -40,16 +40,16 @@
         }
         #submit-btn {
             display: block;
-            width: 100%;
-            padding: 10px;
-            margin-top: 20px;
-            background-color: #FF3131;
-            border-radius: 17px;
-            text-align: center;
-            font-weight: bold;
-            color: #ffffff;
-            border: none;
-            cursor: pointer;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #FF3131;
+        border-radius: 17px;
+        text-align: center;
+        font-weight: bold;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
         }
     </style>
     <title>Sign Up</title>
@@ -106,5 +106,16 @@
             </table>
         </div> 
     </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const signupForm = document.getElementById('signupForm');
+
+            signupForm.addEventListener('submit', (event) => {
+                event.preventDefault();  // Prevents the default form submission behavior
+                window.location.href = 'home.html';
+            });
+        });
+    </script>
 </body>
 </html>
