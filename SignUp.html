@@ -111,8 +111,9 @@
         document.addEventListener('DOMContentLoaded', (event) => {
             const submitButton = document.getElementById('submit-btn');
 
-            submitButton.addEventListener('click', () => {
-                window.location.href = 'home.html';
+            submitButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = 'https://your-bucket-name.s3.amazonaws.com/home.html';
             });
         });
     </script>
